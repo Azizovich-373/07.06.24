@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+                * {
+                        padding: 0px;
+                        margin: 0px;
+                        box-sizing: border-box;
+                        outline: none;
+                }
+                form {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 20px;
+                        width: 550px;
+                }
+                div{
+                        margin: 0 auto;
+                }
+                form div {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        width: fit-content;
+                }
+
+                form div:nth-child(3) {
+                        grid-column: 1/3;
+                }
+
+                form div label {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+                        justify-content: start;
+                        align-items: start;
+                        transition: 1s ease;
+                }
+                h1{
+                        font-size: 30px;
+                        font-weight: normal;
+                }
+                .box-main{
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                        max-width: 350px;
+                        display: grid;
+                        font-size: 15px;
+                        grid-template-columns: repeat(4,1fr);
+                }
+                .title {
+                        font-size: 14px;
+                        font-weight: 400;
+                        transition: 1s ease;
+                }
+
+                .warning-text {
+                        font-size: 11px;
+                        color: #595959;
+                        font-weight: 400;
+                        transition: 1s ease;
+                }
+
+                input {
+                        padding: 10px 12px;
+                        border-radius: 4px;
+                        border: 1px solid #949494;
+                        transition: 1s ease;
+                }
+
+                .required .title {
+                        color: #4200FF;
+                }
+
+                .required input {
+                        border-color: #4200FF;
+                }
+
+                .error {
+                        position: relative;
+                }
+
+                .error .title {
+                        color: #EE0004;
+                }
+
+                .error input {
+                        border-color: #EE0004;
+                }
+
+                .error .warning-text {
+                        color: #EE0004;
+                }
+
+                .error::after {
+                        content: '';
+                        display: block;
+                        width: 20px;
+                        height: 20px;
+                        background-image: url("./warning.svg");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        position: absolute;
+                        right: -25px;
+                        top: 28px;
+
+                }
+                button{
+                        width: 200px;
+                        height: 30px;
+                        background-color: rgb(16, 16, 88);
+                        color: white;
+                        border-radius: 10px;
+                        margin: 0 auto;
+                        border: none;
+                        transition: .5s ease;
+                }
+                button:hover{
+                        width: 210px;
+                        height: 35px;
+                        background-color: rgb(64, 64, 199);
+                }
+        </style>
+        <title>06.06.24</title>
+</head>
+
+        <div>
+
+                <center>
+                        <h1>Example form</h1>
+                        <div class="box-main">
+                                <p>All: 12</p>
+                                <p>Need: 7</p>
+                                <p>Success: 7/7</p>
+                                <p>Error: 7/7</p>
+                        </div>
+                        <form name="register">
+                                <div>
+                                        <label for="name" class="required">
+                                                <span class="title">Name</span>
+                                                <input type="text" name="text" id="name">
+                                                <span class="warning-text">Need to fill</span>
+                                        </label>
+                                        <label for="surname">
+                                                <span class="title">Surname</span>
+                                                <input type="text" name="text" id="surname">
+                                                <span class="warning-text">ㅤ</span>
+                                        </label>
+                                        <label for="email" class="required">
+                                                <span class="title">Email adress</span>
+                                                <input type="email" name="email" id="email">
+                                                <span class="warning-text">Need to fill</span>
+                                        </label>
+                                        <label for="phone">
+                                                <span class="title">Phone number</span>
+                                                <input type="tel" name="phone" id="phone">
+                                                <span class="warning-text">ㅤ</span>
+                                        </label>
+                                        <label for="mother">
+                                                <span class="title">Mother name</span>
+                                                <input type="text" name="text" id="mother">
+                                                <span class="warning-text">ㅤ</span>
+                                        </label>
+                                        <label for="father">
+                                                <span class="title">Father name</span>
+                                                <input type="text" name="text" id="father">
+                                                <span class="warning-text">ㅤ</span>
+                                        </label>
+                                </div>
+                                <div>
+                                        <label for="age" class="required">
+                                                <span class="title">Age</span>
+                                                <input type="number" name="age" id="age">
+                                                <span class="warning-text">Need to fill</span>
+                                        </label>
+                                        <label for="about" class="required">
+                                                <span class="title">About you</span>
+                                                <input type="text" name="text" id="about">
+                                                <span class="warning-text">Need to fill</span>
+                                        </label>
+                                        <label for="js" class="required">
+                                                <span class="title">What is JavaScript?</span>
+                                                <input type="text" name="text" id="js">
+                                                <span class="warning-text">Need to fill</span>
+                                        </label>
+                                        <label for="html" class="required">
+                                                <span class="title">What is HTML?</span>
+                                                <input type="text" name="text" id="html">
+                                                <span class="warning-text">Need to fill</span>
+                                        </label>
+                                        <label for="css" class="required">
+                                                <span class="title">What is CSS?</span>
+                                                <input type="text" name="text" id="css">
+                                                <span class="warning-text">Need to fill</span>
+                                        </label>
+                                        <label for="car">
+                                                <span class="title">Your favourite car</span>
+                                                <input type="text" name="text" id="car">
+                                                <span class="warning-text">ㅤ</span>
+                                        </label>
+                                </div>
+                                <div>
+                                        <button>Submit</button>
+                                </div>
+                        </form>
+                </center>
+
+                <script src="./index.js"></script>
+        </div>
+
+</html>
